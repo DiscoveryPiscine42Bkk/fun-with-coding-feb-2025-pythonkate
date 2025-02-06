@@ -1,11 +1,11 @@
 body {
     font-family: Arial, sans-serif;
-    background: #F4E1C1; margin: 0; padding: 50px;
+    background: #eed4a9; margin: 0; padding: 50px;
     text-align: center;
 }
 
 .menu {
-    background: #8B5A2B; padding: 15px; border-radius: 10px;
+    background: #7e450f; padding: 15px; border-radius: 10px;
 }
 
 .menu ul {
