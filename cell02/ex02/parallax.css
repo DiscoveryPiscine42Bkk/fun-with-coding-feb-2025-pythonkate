@@ -1,0 +1,17 @@
+body, html { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+
+.parallax {
+    height: 100vh; display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 2em; text-align: center; font-weight: bold;
+    background-attachment: fixed; background-position: center; background-size: cover;
+}
+
+.bg1 { 
+    background-image: url("https://pictures.porsche.com/rtt/iris?COSY-EU-100-1711coMvsi60AAt5FwcmBEgA4qP8iBUDxPE3Cb9pNXkBuNYdMGF4tl3U0%25z8rMHIspbWvanYb%255y%25oq%25vSTmjMXD4qAZeoNBPUSfUx4RmHlCgI7Zl2dioCxkF%25vUqCNwuWXsOw3meV6iTCj%25zhp4NdTxf4KxJhvauDFmOcuLAlWRDdV2M"); 
+}
+
+.bg2 { 
+    background-image: url("https://pictures.porsche.com/rtt/iris?COSY-EU-100-1711coMvsi60AAt5FwcmBEgA4qP8iBUDxPE3Cb9pNXkBuNYdMGF4tl3U0%25z8rMH8spbWvanYb%255y%25oq%25vSTmjMXD4qAZeoNBPUSfUx4RmHlCgI7Zl2dioCxkF%25vUqCNwuWXsOsNteV6iTxjgzhRc2LUjqA7fQrmVOJtWFnQbNWMbdJ6gzyel2Pz3BZhUynAYL"); 
+}
+
+.content { background: black; color: white; padding: 50px; text-align: center; }
