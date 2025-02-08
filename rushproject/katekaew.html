@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: black;
+            padding: 15px 20px;
+            position: fixed; 
+            width: 100%;  
+            top: 0; 
+            left: 0;
+            z-index: 1000;
+        }
+        .navbar-brand, .nav-link {
+            color: white !important;
+            font-weight: 600;
+            left: 180px; 
+        }
+        .container-section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100vh;
+            background: linear-gradient(135deg, #f0f0f0, #ffffff);
+            padding: 50px;
+        }
+        .hero-text {
+            max-width: 50%;
+        }
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #000000;
+        }
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-top: 15px;
+            color: #555;
+        }
+        .hero img {
+            max-width: 50%;
+            border-radius: 15px;
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary, .btn-secondary {
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 8px;
+        }
+        .btn-primary {
+            background: #ff4081;
+            border: none;
+        }
+        .btn-secondary {
+            background: #8600e6;
+            color: white;
+        }
+        .about {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fff;
+            padding: 80px 50px;
+        }
+        .about img {
+            max-width: 40%;
+            border-radius: 15px;
+            box-shadow: 10px 10px 30px rgba(107, 107, 107, 0.216);
+        }
+        .about-text {
+            max-width: 50%;
+        }
+        .about-text h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #000000;
+        }
+        .about-text p {
+            font-size: 1.2rem;
+            margin-top: 15px;
+            color: #555;
+        }
+        .kk-image {
+            max-width: 40%;  
+            height: auto; 
+            border-radius: 30px; 
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.393);
+        }
+
+        .kk-container {
+            position: relative;
+            text-align: right; 
+            padding-bottom: 70px; 
+            padding-right: 180px; 
+}
+
+
+        .showcase-title {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        .showcase-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 20px;
+            padding: 20px;
+        }
+        .showcase-item {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 400px; 
+        }
+        .showcase-item img {
+            width: 100%;
+            height: 250px; 
+            object-fit: cover;
+        }
+        .showcase-item div {
+            padding: 15px;
+            text-align: center;
+        }
+        .showcase-item:hover {
+            transform: scale(1.05);
+            transform-origin: center;
+            will-change: transform;
+        }
+        .card-title {
+            font-weight: 600;
+            margin-top: 10px;
+            font-size: 1.25rem;
+            color: #000000;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 60px;
+            color: #000000;
+        }
+        .team-member {
+            text-align: center;
+            width: 250px;
+        }
+        .team-member img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+        .team-member h5 {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #000000
+        }
+        .team-member p {
+            font-size: 1rem;
+            color: #000000;
+        }
+        h1 {
+            text-align: left; 
+            color: rgb(255, 255, 255); 
+            font-size: 2rem; 
+            font-weight: bold;
+            margin-top: 40px;
+            margin-bottom: 5px; 
+            position: relative;
+            z-index: 2;
+        }
+        h2 {
+            text-align: center; 
+            color: rgb(255, 255, 255); 
+            font-size: 2rem; 
+            font-weight: bold; 
+            margin-top: 40px;
+            margin-bottom: 5px;
+        }
+        h3 {
+            text-align: center; 
+            color: rgb(255, 255, 255);
+            font-size: 1.5rem;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        #contact {
+            padding-top: 80px;
+        }
+        #showcase {
+            padding-top: 90px;
+        }
+        h4 {
+            text-align: center; 
+            color: rgb(0, 0, 0);
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">kmuakmua</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#showcase">Showcase</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Katekaew Muakmuang</h1>
+            <p>Discover my work, skills, and internship journey.</p>
+            <a href="file:///C:/Users/katek/OneDrive/Desktop/fun-with-coding-feb-2025-pythonkate/rushproject/index.html" class="btn btn-primary">Previous</a>
+            <a href="file:///C:/Users/katek/OneDrive/Desktop/fun-with-coding-feb-2025-pythonkate/rushproject/saran.html" class="btn btn-secondary">DUO</a>
+        </div>
+        <img src="https://scontent.fbkk6-1.fna.fbcdn.net/v/t39.30808-6/476359936_2062257530864731_8817803668858357121_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGJPCSFUleQMuDWRCdeE6SdrCUUBfZCQ4-sJRQF9kJDj_182_R7sqbsJCY7PPu66o1dmTfe16Rh5c6WI2FNcarO&_nc_ohc=6sTkVkRiSR8Q7kNvgE5ri97&_nc_zt=23&_nc_ht=scontent.fbkk6-1.fna&_nc_gid=AjRxCbIMPzSUBauIAD5hZKq&oh=00_AYCDYNgUMsGuLO8Vj-3H7_qI6AjYx4hVdGob-07hGY1TqQ&oe=67AC2123" alt="KK Image" 
+        class="kk-image">
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <img src="https://scontent.fbkk6-1.fna.fbcdn.net/v/t39.30808-6/476229034_2062309297526221_6522845494541870626_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHUkmorrXsmyjyd6B-zWSI568-r47LQk47rz6vjstCTjikE5dU41m6fvDMmt0ejLMAJnQ2PkAz_zEwwV5Xc2kog&_nc_ohc=nV045XnZsS0Q7kNvgHu3REu&_nc_zt=23&_nc_ht=scontent.fbkk6-1.fna&_nc_gid=Atp3zAfKoyQvFyI75_R_0a5&oh=00_AYDfuNHW4iepktxF628AzkH1uE4EI-TQp4vOlbZKX-uGaw&oe=67AC3073" alt="About Me Image">
+        <div class="about-text">
+            <h2>About Me</h2>
+            <p>I am motivated and hands-on agricultural engineering student with a passion for agricultural machinery, data analysis, IoT and quality control for agricultural products. Eager to learn and contribute to a fast-paced environment. Hopefully, I will be able to work at your organization to gain valuable experience and willing to take on new challenges.</p>
+            <p><strong>Education:</strong> Bachelor's Degree in Agricultural Intelligence Engineering</p>
+            <p><strong>Skills:</strong> Microsoft Office, AutoCAD and IoT</p>
+        </div>
+    </section>
+
+    <!-- Showcase Section -->
+    <section id="showcase" class="section">
+        <div class="container">
+            <h2>Showcase</h2>
+            <h3>Internship Programme</h3>
+            <div class="showcase-container">
+                <div class="showcase-item">
+                    <img src="https://scontent.fbkk6-1.fna.fbcdn.net/v/t39.30808-6/476639616_2062365880853896_5728802433269485513_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEsxab7klc-E0DV9iibjef3jdc8KEjRLkiN1zwoSNEuSJOnVP_N-OGJyKWOm2zH2axPU5c6QPiJ0E4xKk9-qGav&_nc_ohc=hrFzyM7tYsEQ7kNvgFVzfV1&_nc_zt=23&_nc_ht=scontent.fbkk6-1.fna&_nc_gid=AAt7U9-gxtPo_Ck8KDbmMW5&oh=00_AYADpoA8rERGJJt8-8hr4gQ0Df9vESBgbUD6_mVzULR5dA&oe=67AC4CC8" alt="SC1">
+                    <div>
+                        <h5 class="card-title">Manufacturing Engineering and Development Trainee</h5>
+                    </div>
+                </div>
+                <div class="showcase-item">
+                    <img src="https://scontent.fbkk6-1.fna.fbcdn.net/v/t39.30808-6/476369750_2062362870854197_6860863438361503078_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeF1HNNFmTB0YlGJTO_OnBjbDxSu-MgFMd8PFK74yAUx33xLGuw-kDZTDhk1FgT_XmYkHjlxVMNqNq5mwEAP2daT&_nc_ohc=oOeHCMXBlosQ7kNvgFCio8z&_nc_zt=23&_nc_ht=scontent.fbkk6-1.fna&_nc_gid=A2uU1ZpLxSLaqCjdi8ABaz_&oh=00_AYAy587t827OrgceUPziuWirDBE7Igk6s67B9c3MBBprzQ&oe=67AC631E" alt="SC2">
+                    <div>
+                        <h5 class="card-title">Remote I/O Installation for oil tank </h5>
+                    </div>
+                </div>
+                <div class="showcase-item">
+                    <img src="https://scontent.fbkk6-1.fna.fbcdn.net/v/t39.30808-6/476774423_2062359950854489_91226499078961244_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGMd0DuiS8p6pJoqLjmnqDM2QZFcsqpmN7ZBkVyyqmY3qJUQDJkIk8ksBMkFjLEDdm1E1Xna3LdQOXwXO_Elpid&_nc_ohc=tbkUrTaryKoQ7kNvgGYp3Y0&_nc_zt=23&_nc_ht=scontent.fbkk6-1.fna&_nc_gid=AIK_jSvPGE3OD5QGH-7eGoO&oh=00_AYB0S4hkWpENJP_ao7194nNCtCsvyeqNP44zFcl9PGMmDg&oe=67AC6065" alt="SC3">
+                    <div>
+                        <h5 class="card-title">Vibration Sensor Installation for IoT System</h5>
+                    </div>
+                </div>
+                <div class="showcase-item">
+                    <img src="https://scontent.fbkk6-2.fna.fbcdn.net/v/t39.30808-6/476841740_2062359954187822_6278157296280272251_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHi8l3uybXK-k4Hs7OuN2u46OiAtkexkOjo6IC2R7GQ6GMasTNuSyVksKwohEGstQkkHfz1wKKOqAZ3f7bzUMvw&_nc_ohc=fqVBhmsWswoQ7kNvgFEGax4&_nc_zt=23&_nc_ht=scontent.fbkk6-2.fna&_nc_gid=AwvAeKayclyFn7s04q4Q6am&oh=00_AYDk3OjhJYjDMIpbFmz0dTT2HmOm_6rZF3rHhc9LOnrZag&oe=67AC5C63" alt="SC4">
+                    <div>
+                        <h5 class="card-title">GEMBA at Production</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-light">
+        <div class="container">
+            <h4>Contact Me</h4>
+            <div class="team-container">
+                <div class="team-member">
+                    <a href="https://www.instagram.com/kkatekaeww?igsh=MTd4b2d3dnNwemE1dA%3D%3D&utm_source=qr" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/640px-Instagram_icon.png" alt="Instagram">
+                    </a>
+                    <h5>Instagram</h5>
+                    <p>@kkatekaeww</p>
+                </div>
+                <div class="team-member">
+                    <a href="https://www.linkedin.com/in/katekaew-muankmuang-32bb6427b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+                    </a>
+                    <h5>LinkedIn</h5>
+                    <p>Katekaew Muakmuang</p>
+                </div>
+                <div class="team-member">
+                    <a href="https://github.com/pythonkate" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
+                    </a>
+                    <h5>GitHub</h5>
+                    <p>pythonkate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
